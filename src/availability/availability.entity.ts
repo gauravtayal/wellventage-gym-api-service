@@ -1,3 +1,4 @@
+import { User } from 'src/user/user.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -5,10 +6,9 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { WorkoutPlan } from './workout-plan.entity';
 
 @Entity()
-export class Session {
+export class Availability {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -16,7 +16,7 @@ export class Session {
   name: string;
 
   @Column({ type: 'json' }) // Array of dates/strings
-  sessionDates: string[];
+  sessionData: any;
 
   @Column()
   sessionType: string;
@@ -24,12 +24,12 @@ export class Session {
   @Column({ default: 'active' })
   status: string;
 
-  @ManyToOne(() => WorkoutPlan, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'workoutId' })
-  workoutPlan: WorkoutPlan;
+  @ManyToOne(() => User, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'userId' })
+  user: User;
 
   @Column()
-  workoutId: string;
+  userId: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;

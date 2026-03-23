@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { WorkoutModule } from './workout/workout.module';
+import { AvailabilityModule } from './availability/availability.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { WorkoutModule } from './workout/workout.module';
     UserModule,
     AuthModule,
     WorkoutModule,
+    AvailabilityModule,
   ],
   controllers: [AppController],
   providers: [AppService],

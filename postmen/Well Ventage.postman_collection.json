@@ -1,0 +1,263 @@
+{
+  "info": {
+    "_postman_id": "93d573de-9bc4-42bc-a653-3558576b75da",
+    "name": "Well Ventage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1304658"
+  },
+  "item": [
+    {
+      "name": "Auth Login",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "WorkoutPlan",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdnRheWFsMjAxM0BnbWFpbC5jb20iLCJzdWIiOiJhYjRmOTRmOC02MzZmLTQwNWEtODBjOC04ZDRiYzViNTFjZjkiLCJuYW1lIjoiR2F1cmF2IiwiaWF0IjoxNzc0MjUzNDY0LCJleHAiOjE3NzQzMzk4NjR9.TxthOdr6TMfeZS9wlp_PFlYDiuo8oxdFCsCc_DKJLA0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/workout/workoutPlan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "workout",
+            "workoutPlan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Workout Plan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdnRheWFsMjAxM0BnbWFpbC5jb20iLCJzdWIiOiJhYjRmOTRmOC02MzZmLTQwNWEtODBjOC04ZDRiYzViNTFjZjkiLCJuYW1lIjoiR2F1cmF2IiwiaWF0IjoxNzc0MjUzNDY0LCJleHAiOjE3NzQzMzk4NjR9.TxthOdr6TMfeZS9wlp_PFlYDiuo8oxdFCsCc_DKJLA0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Begineer Workout - 3 Days\",\n    \"workoutData\": {\"Day1\":[\n        {\n            \"name\": \"Chest\",\n            \"set\": 3,\n            \"repet\": \"5-6\"\n        },\n        {\n            \"name\": \"Bench Press\",\n            \"set\": 5,\n            \"repet\": \"5-6\"\n        },\n        {\n            \"name\": \"Bench Pushup\",\n            \"set\": 3,\n            \"repet\": \"5-6\"\n        },\n        {\n            \"name\": \"Plank\",\n            \"set\": 10,\n            \"repet\": \"5-6\"\n        }]\n    },\n    \"description\":\"wakeup ealry,need ots in Breakfast\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/workout/workoutPlanCreate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "workout",
+            "workoutPlanCreate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createNewAvailability",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdnRheWFsMjAxM0BnbWFpbC5jb20iLCJzdWIiOiJhYjRmOTRmOC02MzZmLTQwNWEtODBjOC04ZDRiYzViNTFjZjkiLCJuYW1lIjoiR2F1cmF2IiwiaWF0IjoxNzc0MjUzNDY0LCJleHAiOjE3NzQzMzk4NjR9.TxthOdr6TMfeZS9wlp_PFlYDiuo8oxdFCsCc_DKJLA0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"PT Session\",\n    \"sessionData\": {\n        \"23-03-2026\": [\n            {\n                \"startTime\": \"11:30\",\n                \"endTime\": \"12:30\"\n            },\n            {\n                \"startTime\": \"13:00\",\n                \"endTime\": \"14:00\"\n            }\n        ],\n        \"24-03-2026\": [\n            {\n                \"startTime\": \"18:00\",\n                \"endTime\": \"19:00\"\n            },\n            {\n                \"startTime\": \"06:00\",\n                \"endTime\": \"07:00\"\n            }\n        ]\n    },\n    \"sessionType\": \"single\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/availability/createNewAvailability",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "availability",
+            "createNewAvailability"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAvailbility",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdnRheWFsMjAxM0BnbWFpbC5jb20iLCJzdWIiOiJhYjRmOTRmOC02MzZmLTQwNWEtODBjOC04ZDRiYzViNTFjZjkiLCJuYW1lIjoiR2F1cmF2IiwiaWF0IjoxNzc0MjUzNDY0LCJleHAiOjE3NzQzMzk4NjR9.TxthOdr6TMfeZS9wlp_PFlYDiuo8oxdFCsCc_DKJLA0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/availability/getAvailability",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "availability",
+            "getAvailability"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Workout Session",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdnRheWFsMjAxM0BnbWFpbC5jb20iLCJzdWIiOiJhYjRmOTRmOC02MzZmLTQwNWEtODBjOC04ZDRiYzViNTFjZjkiLCJuYW1lIjoiR2F1cmF2IiwiaWF0IjoxNzc0MjUzNDY0LCJleHAiOjE3NzQzMzk4NjR9.TxthOdr6TMfeZS9wlp_PFlYDiuo8oxdFCsCc_DKJLA0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"day\": \"Day1\",\n    \"data\": null\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/workout/workoutPlanDelete/ce1b4d19-f69f-4e30-8c67-6614ac345730",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "workout",
+            "workoutPlanDelete",
+            "ce1b4d19-f69f-4e30-8c67-6614ac345730"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Availability",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdnRheWFsMjAxM0BnbWFpbC5jb20iLCJzdWIiOiJhYjRmOTRmOC02MzZmLTQwNWEtODBjOC04ZDRiYzViNTFjZjkiLCJuYW1lIjoiR2F1cmF2IiwiaWF0IjoxNzc0MjUzNDY0LCJleHAiOjE3NzQzMzk4NjR9.TxthOdr6TMfeZS9wlp_PFlYDiuo8oxdFCsCc_DKJLA0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"date\": \"23-03-2026\",\n    \"time\": {\"startTime\":\"11:30\",\"endTime\":\"12:30\"}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/availability/deleteAvailability/4733f818-b8fe-47e2-8b4e-fc1743f02088",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "availability",
+            "deleteAvailability",
+            "4733f818-b8fe-47e2-8b4e-fc1743f02088"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

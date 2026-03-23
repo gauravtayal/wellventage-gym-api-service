@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { WorkoutPlan } from './workout-plan.entity';
-import { Session } from './session.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -9,8 +8,6 @@ export class WorkoutService {
   constructor(
     @InjectRepository(WorkoutPlan)
     private workoutPlanRepository: Repository<WorkoutPlan>,
-    @InjectRepository(Session)
-    private sessionRepository: Repository<Session>,
   ) {}
 
   async createWorkoutPlan(
@@ -22,6 +19,18 @@ export class WorkoutService {
 
   async getWorkoutPlan(userId: string): Promise<WorkoutPlan[]> {
     return this.workoutPlanRepository.find({ where: { userId } });
+  }
+
+  async getWorkoutPlanById(id: string, userId: string): Promise<WorkoutPlan> {
+    return this.workoutPlanRepository.findOne({ where: { id, userId } });
+  }
+
+  async updateWorkoutPlan(
+    id: string,
+    workoutPlan: Partial<WorkoutPlan>,
+  ): Promise<WorkoutPlan> {
+    await this.workoutPlanRepository.update(id, workoutPlan);
+    return this.workoutPlanRepository.findOne({ where: { id } });
   }
 
   async deleteWorkoutPlan(id: string): Promise<void> {
